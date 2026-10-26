@@ -267,6 +267,28 @@
     text-transform: uppercase;
   }
 
+  /* ------------------------------------------------------------ credit */
+  #flappy-hud #credit {
+    position: absolute;
+    right: clamp(12px, 2.4vw, 26px);
+    bottom: clamp(10px, 2.2vh, 22px);
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(9, 46, 66, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: clamp(8px, 1.2vh, 10px);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: rgba(240, 253, 255, 0.9);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #flappy-hud #credit b {
+    font-weight: 800;
+    color: #9fe5f7;
+  }
+
   @keyframes ff-pop {
     from { opacity: 0; transform: translate(-50%, -46%) scale(0.9); }
     to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
@@ -323,4 +345,6 @@
     <span class="chip" id="state-tag">SIAP</span>
     <span class="chip" id="speed-tag">4.0x</span>
   </div>
+
+  <div id="credit">&copy; 2026 &middot; Dibuat dengan <b>Linden Engine</b></div>
 </div>
