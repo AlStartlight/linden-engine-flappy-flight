@@ -1,80 +1,83 @@
-# FlappyFlight
+# OXEN SPACESHIP GALAXY
 
 ## Game ini dibuat dengan LINDEN ENGINE
 
-Flappy Bird–style arcade game — dibuat dengan **LINDEN ENGINE** (ECS architecture, Three.js
-rendering WebGPU/WebGL, dan fisika Rapier).
+**OXEN SPACESHIP GALAXY** adalah game arcade bertema luar angkasa bergaya *flappy* — dibuat dengan
+**LINDEN ENGINE** (arsitektur ECS, rendering Three.js WebGPU/WebGL, dan fisika Rapier).
 
 > **Made BY Linden Engine**
 > Dibuat dengan [Linden Engine](https://lindenengine.com) — © 2026 AlStartlight
 
 ---
 
-## Gameplay
+## Cara bermain
 
-Tap to flap. Fly the bird through the pipe gaps, survive as long as you can and beat your best score.
+Terbang melewati celah di antara rintangan. Satu tap = satu dorongan ke atas. Bertahan selama
+mungkin dan pecahkan rekor terbaikmu.
 
-- **Ready** – the bird bobs in place, waiting for the first flap.
-- **Flying** – gravity pulls you down; every flap gives an upward burst.
-- **Game over** – the bird tumbles to the ground, then tap again to restart.
+| Fase | Yang terjadi |
+| --- | --- |
+| **SIAP** | Karakter melayang menunggu tap pertama |
+| **TERBANG** | Gravitasi menarik ke bawah, setiap tap memberi dorongan ke atas |
+| **TUMBANG** | Karakter jatuh, panel *game over* muncul, tap lagi untuk mengulang |
 
-## Features
+## Fitur
 
-- Procedurally recycled pipe pairs — endless run, no level loading.
-- Difficulty ramp: world speed rises and the gap narrows as your score grows.
-- Randomised pipe heights with smooth drift (always clearable).
-- Best score saved in `localStorage` and shown in the HUD.
-- Medal ranks: PEMULA → PERUNGGU → PERAK → EMAS → PLATINUM.
-- Coin-style score pop, hit flash, parallax clouds and ground dashes.
-- Procedural sound effects via the Web Audio API (no audio assets needed).
-- Camera adapts to the window aspect ratio, from ultrawide to portrait/mobile.
+- Rintangan tanpa akhir — dipindah dan didaur ulang otomatis, tanpa loading level.
+- Tingkat kesulitan naik: kecepatan dunia bertambah dan celah menyempit seiring skor.
+- Posisi celah acak dengan pergeseran halus (selalu bisa dilewati).
+- Rekor terbaik disimpan di `localStorage` dan ditampilkan di HUD.
+- Medali: PEMULA → PERUNGGU → PERAK → EMAS → PLATINUM.
+- Efek pop skor, kilat saat tabrakan, parallax awan dan garis tanah.
+- Sound effect prosedural lewat Web Audio API (tanpa file audio).
+- Kamera menyesuaikan rasio layar, dari ultrawide sampai portrait/mobile.
 
-## Controls
+## Kontrol
 
-| Action | Keyboard | Gamepad | Touch |
+| Aksi | Keyboard | Gamepad | Touch |
 | --- | --- | --- | --- |
-| Flap / Start / Restart | `Space` (or left click) | A / RT | Tap the screen |
-| Restart button | `Enter` on the game over panel | — | `RESTART` button |
+| Terbang / Mulai / Ulang | `Space` (atau klik kiri) | A / RT | Tap layar |
+| Tombol ulang | `Enter` di panel game over | — | Tombol `RESTART` |
 
-Input is read from the project's Input Actions (`Jump` and `Attack`), so any binding added in
-Linden Engine works automatically.
+Input dibaca dari Input Actions project (`Jump` dan `Attack`), jadi binding apa pun yang ditambah
+di Linden Engine langsung berfungsi.
 
-## Project structure
+## Struktur project
 
 ```
-project.linden.json     project config: Input Actions, scenes in build, export presets
-scenes/Main.lscene      main scene: bird, pipes, ground, parallax layers, camera
-scripts/FlappyGame.ts   gameplay: physics feel, pipe recycling, scoring, audio, HUD logic
-ui/hud.html             HUD + ready / game over panels (HTML + CSS only)
-assets/                 textures, audio and models (placeholders for now)
-build/                  generated builds (git-ignored)
+project.linden.json     konfigurasi project: Input Actions, scene, export preset
+scenes/Main.lscene      scene utama: karakter, rintangan, tanah, parallax, kamera
+scripts/FlappyGame.ts   gameplay: rasa gerak, daur ulang rintangan, skor, audio, HUD
+ui/hud.html             HUD + panel siap / game over (HTML + CSS saja)
+assets/                 tekstur, audio, dan model
+build/                  hasil build (di-ignore git)
 ```
 
-## Running the project
+## Menjalankan
 
-1. Open the folder in **Linden Engine**.
-2. Open `scenes/Main.lscene`.
-3. Press **Play**.
+1. Buka folder ini di **Linden Engine**.
+2. Buka `scenes/Main.lscene`.
+3. Tekan **Play**.
 
-Tweakable gameplay values live at the top of `scripts/FlappyGame.ts` and can be overridden
-per entity through the Script component's `props` in the Inspector:
+Nilai gameplay ada di bagian atas `scripts/FlappyGame.ts` dan bisa ditimpa lewat `props`
+komponen Script di Inspector:
 
-| Field | Default | Meaning |
+| Properti | Default | Arti |
 | --- | --- | --- |
-| `gravity` | `24` | Downward acceleration |
-| `flapSpeed` | `7.8` | Upward speed per flap |
-| `baseSpeed` / `maxSpeed` | `4.0` / `5.6` | World scroll speed range |
-| `baseGap` / `minGap` | `3.25` / `2.55` | Pipe gap at score 0 / hardest |
-| `pipeSpacing` | `6.2` | Horizontal distance between pipes |
+| `gravity` | `24` | Percepatan ke bawah |
+| `flapSpeed` | `7.8` | Kecepatan dorongan tiap tap |
+| `baseSpeed` / `maxSpeed` | `4.0` / `5.6` | Rentang kecepatan dunia |
+| `baseGap` / `minGap` | `3.25` / `2.55` | Celah rintangan di skor 0 / tersulit |
+| `pipeSpacing` | `6.2` | Jarak antar rintangan |
 
-## Web export
+## Export web
 
-Export an HTML5 build with **Export → Web** (or the `export_web` tool). The result is written to
-`build/web/index.html` and can be played in any modern browser or uploaded to itch.io.
+Export build HTML5 lewat **Export → Web** (atau tool `export_web`). Hasilnya ada di
+`build/web/index.html`, bisa dimainkan di browser modern atau diunggah ke itch.io.
 
 ---
 
 <p align="center">
-  <b>Made BY Linden Engine</b><br>
-  © 2026 AlStartlight — built with Linden Engine.
+  <b>OXEN SPACESHIP GALAXY</b><br>
+  Made BY Linden Engine — © 2026 AlStartlight
 </p>
