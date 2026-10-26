@@ -2,53 +2,74 @@
 
 ## Game ini dibuat dengan LINDEN ENGINE
 
-**OXEN SPACESHIP GALAXY** adalah game arcade bertema luar angkasa bergaya *flappy* — dibuat dengan
-**LINDEN ENGINE** (arsitektur ECS, rendering Three.js WebGPU/WebGL, dan fisika Rapier).
+**OXEN SPACESHIP GALAXY** adalah game arcade 2D *tap-to-fly* yang dibuat dengan **LINDEN ENGINE**
+(ECS + Three.js WebGPU/WebGL + fisika Rapier). Kamu mengendalikan seekor burung kecil yang terbang
+melewati celah di antara pipa hijau di atas pantai cerah — satu tap = satu kepakan sayap.
 
 > **Made BY Linden Engine**
 > Dibuat dengan [Linden Engine](https://lindenengine.com) — © 2026 AlStartlight
 
 ---
 
-## Cara bermain
+## Deskripsi game
 
-Terbang melewati celah di antara rintangan. Satu tap = satu dorongan ke atas. Bertahan selama
-mungkin dan pecahkan rekor terbaikmu.
+Burung kuning melayang di sisi kiri layar dan dunia bergerak ke kiri. Setiap kali pemain menekan
+`Space` / mengetuk layar, burung mendapat dorongan ke atas; gravitasi terus menariknya ke bawah.
+Pipa datang berpasangan (atas + bawah) dengan celah yang posisinya diacak halus. Menyentuh pipa
+atau tanah mengakhiri penerbangan.
 
-| Fase | Yang terjadi |
-| --- | --- |
-| **SIAP** | Karakter melayang menunggu tap pertama |
-| **TERBANG** | Gravitasi menarik ke bawah, setiap tap memberi dorongan ke atas |
-| **TUMBANG** | Karakter jatuh, panel *game over* muncul, tap lagi untuk mengulang |
+Tampilan scene `scenes/Main.lscene` (kamera ortografis, gaya side-scroller):
 
-## Fitur
+| Bagian scene | Entity di project | Peran |
+| --- | --- | --- |
+| Pemain | `Bird`, `Bird Body`, `Bird Wing`, `Bird Eye`, `Bird Pupil`, `Bird Beak`, `Bird Tail` | Burung kuning dengan sayap yang mengepak; `Tag: Player, Flying` |
+| Rintangan | `Pipe 0..5` (Top, Top Cap, Bottom, Bottom Cap) | 6 pasang pipa hijau ber-cap, didaur ulang terus-menerus; `Tag: Enemy` |
+| Tanah | `Ground Sand`, `Ground Grass`, `Ground Line` | Pantai berpasir + rumput; `Tag: Ground` |
+| Latar | `Sky Top`, `Sky Mid`, `Sky Low`, `Sun`, `Hills Far`, `Hills Near` | Gradasi langit, matahari, dan perbukitan |
+| Parallax | `Cloud 0..3`, `Dash 0..9` | Awan yang bergeser pelan dan garis tanah yang melaju |
+| Kamera | `Main Camera` (orthographic, fov 60) + `Script` + `HtmlUI` | Menyesuaikan zoom dengan rasio layar, menjalankan gameplay & HUD |
+| Cahaya | `Sun Light` | Directional light hangat `#fff6e0` |
+| HUD | `ui/hud.html` | Skor, rekor, panel siap & game over |
 
-- Rintangan tanpa akhir — dipindah dan didaur ulang otomatis, tanpa loading level.
-- Tingkat kesulitan naik: kecepatan dunia bertambah dan celah menyempit seiring skor.
-- Posisi celah acak dengan pergeseran halus (selalu bisa dilewati).
-- Rekor terbaik disimpan di `localStorage` dan ditampilkan di HUD.
-- Medali: PEMULA → PERUNGGU → PERAK → EMAS → PLATINUM.
-- Efek pop skor, kilat saat tabrakan, parallax awan dan garis tanah.
-- Sound effect prosedural lewat Web Audio API (tanpa file audio).
-- Kamera menyesuaikan rasio layar, dari ultrawide sampai portrait/mobile.
+## Alur permainan
+
+| Fase | HUD | Yang terjadi |
+| --- | --- | --- |
+| **SIAP** | “SIAP TERBANG? — SPASI atau KETUK” | Burung melayang naik-turun menunggu input pertama |
+| **TERBANG** | Skor besar di tengah atas + chip `TERBAIK` | Gravitasi aktif; tap = dorongan; skor bertambah tiap pipa terlewati |
+| **GAME OVER** | “GAME OVER — Penerbangan berakhir”, skor, terbaik, medali | Burung jatuh, panel muncul setelah 0,5 s; tap / `SPASI` / tombol `MAIN LAGI` untuk ulang |
+
+Medali mengikuti skor: **PEMULA** (0–4), **PERUNGGU** (5–9), **PERAK** (10–19), **EMAS** (20–29),
+**PLATINUM** (30+).
 
 ## Kontrol
 
 | Aksi | Keyboard | Gamepad | Touch |
 | --- | --- | --- | --- |
-| Terbang / Mulai / Ulang | `Space` (atau klik kiri) | A / RT | Tap layar |
-| Tombol ulang | `Enter` di panel game over | — | Tombol `RESTART` |
+| Kepak / Mulai / Ulang | `Space` atau klik kiri | A / RT | Ketuk layar |
+| Tombol ulang | `Enter` di panel game over | — | Tombol `MAIN LAGI` |
 
-Input dibaca dari Input Actions project (`Jump` dan `Attack`), jadi binding apa pun yang ditambah
-di Linden Engine langsung berfungsi.
+Input dibaca dari Input Actions project (`Jump` dan `Attack`), jadi binding tambahan di
+Linden Engine langsung berfungsi.
+
+## Fitur
+
+- Pipa tak berujung: 6 pasang pipa dipindah dan didaur ulang, tanpa loading level.
+- Kesulitan bertahap: kecepatan dunia naik (`4.0x → 5.6x`) dan celah menyempit (`3.25 → 2.55`).
+- Posisi celah acak dengan pergeseran halus sehingga selalu bisa dilewati.
+- Rekor terbaik disimpan di `localStorage` (`flappyflight.best`) dan ditampilkan di HUD.
+- Skor “pop”, kilatan merah saat tabrakan, dan burung yang menukik saat jatuh.
+- Parallax awan dan garis tanah untuk kesan kecepatan.
+- SFX prosedural lewat Web Audio API — tanpa file audio.
+- Kamera ortografis adaptif: ultrawide sampai portrait/mobile.
 
 ## Struktur project
 
 ```
 project.linden.json     konfigurasi project: Input Actions, scene, export preset
-scenes/Main.lscene      scene utama: karakter, rintangan, tanah, parallax, kamera
-scripts/FlappyGame.ts   gameplay: rasa gerak, daur ulang rintangan, skor, audio, HUD
-ui/hud.html             HUD + panel siap / game over (HTML + CSS saja)
+scenes/Main.lscene      scene utama (bird, 6 pasang pipa, pantai, parallax, kamera)
+scripts/FlappyGame.ts   gameplay: gerak burung, daur ulang pipa, skor, audio, HUD
+ui/hud.html             HUD + panel SIAP dan GAME OVER (HTML + CSS saja)
 assets/                 tekstur, audio, dan model
 build/                  hasil build (di-ignore git)
 ```
@@ -65,10 +86,11 @@ komponen Script di Inspector:
 | Properti | Default | Arti |
 | --- | --- | --- |
 | `gravity` | `24` | Percepatan ke bawah |
-| `flapSpeed` | `7.8` | Kecepatan dorongan tiap tap |
+| `flapSpeed` | `7.8` | Kecepatan dorongan tiap kepak |
+| `maxFallSpeed` | `-13` | Batas kecepatan jatuh |
 | `baseSpeed` / `maxSpeed` | `4.0` / `5.6` | Rentang kecepatan dunia |
-| `baseGap` / `minGap` | `3.25` / `2.55` | Celah rintangan di skor 0 / tersulit |
-| `pipeSpacing` | `6.2` | Jarak antar rintangan |
+| `baseGap` / `minGap` | `3.25` / `2.55` | Celah pipa di skor 0 / tersulit |
+| `pipeSpacing` | `6.2` | Jarak antar pasang pipa |
 
 ## Export web
 
