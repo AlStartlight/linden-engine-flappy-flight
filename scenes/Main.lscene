@@ -1,0 +1,2860 @@
+{
+  "entities": [
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 10.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "aspect": 1.7777777777777777,
+            "backgroundColor": {
+              "a": 1,
+              "b": 0.95,
+              "g": 0.88,
+              "r": 0.56
+            },
+            "far": 300,
+            "fov": 60,
+            "isActive": true,
+            "isEnabled": true,
+            "isOrthographic": true,
+            "near": 0.1,
+            "orthoSize": 6
+          },
+          "type": "Camera"
+        },
+        {
+          "data": {
+            "isEnabled": true,
+            "props": {},
+            "src": "scripts/FlappyGame.ts"
+          },
+          "type": "Script"
+        },
+        {
+          "data": {
+            "isEnabled": true,
+            "mode": "screen",
+            "pixelSize": 0.01,
+            "pointerEvents": false,
+            "src": "ui/hud.html",
+            "zIndex": 10
+          },
+          "type": "HtmlUI"
+        }
+      ],
+      "id": "main-camera",
+      "layer": 0,
+      "name": "Main Camera",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "MainCamera"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": -38,
+              "y": 26,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#fff6e0",
+            "intensity": 1.25,
+            "isEnabled": true,
+            "range": 100,
+            "type": "directional"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "sun-light",
+      "layer": 0,
+      "name": "Sun Light",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 4.75,
+              "z": -3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 9.6,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#79cfe8",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0,
+            "primitive": "plane",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "sky-top",
+      "layer": 0,
+      "name": "Sky Top",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -2.2,
+              "z": -3.05
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 4.6,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#a7e4f2",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0,
+            "primitive": "plane",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "sky-mid",
+      "layer": 0,
+      "name": "Sky Mid",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -5.3,
+              "z": -3.1
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 1.6,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d9f5fb",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0,
+            "primitive": "plane",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "sky-low",
+      "layer": 0,
+      "name": "Sky Low",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 7.4,
+              "y": 3.9,
+              "z": -2.6
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.9,
+              "y": 1.9,
+              "z": 1.9
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#fff4b8",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "sun",
+      "layer": 0,
+      "name": "Sun",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -3.4,
+              "z": -1.9
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 2.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d4c6",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.95
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "hills-far",
+      "layer": 0,
+      "name": "Hills Far",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -3.95,
+              "z": -1.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 1.5,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5fb8ab",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.95
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "hills-near",
+      "layer": 0,
+      "name": "Hills Near",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -7.2,
+              "y": 3.5,
+              "z": -2.1
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2.9,
+              "y": 1,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f4fbff",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "cloud-0",
+      "layer": 0,
+      "name": "Cloud 0",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -1.8,
+              "y": 4.5,
+              "z": -2.1
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2.2,
+              "y": 0.8,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f4fbff",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "cloud-1",
+      "layer": 0,
+      "name": "Cloud 1",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 3.6,
+              "y": 3.1,
+              "z": -2.1
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 3.2,
+              "y": 1.05,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f4fbff",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "cloud-2",
+      "layer": 0,
+      "name": "Cloud 2",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 8.6,
+              "y": 4.7,
+              "z": -2.1
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.75,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f4fbff",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "cloud-3",
+      "layer": 0,
+      "name": "Cloud 3",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -5.15,
+              "z": 0.8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 1.8,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#e7d9a3",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "ground-sand",
+      "layer": 0,
+      "name": "Ground Sand",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -4.32,
+              "z": 0.9
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 0.28,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#7cc850",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.9
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "ground-grass",
+      "layer": 0,
+      "name": "Ground Grass",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -4.49,
+              "z": 0.92
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 80,
+              "y": 0.14,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#59a63c",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.95
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "ground-line",
+      "layer": 0,
+      "name": "Ground Line",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -14,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-0",
+      "layer": 0,
+      "name": "Dash 0",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -11.2,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-1",
+      "layer": 0,
+      "name": "Dash 1",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -8.4,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-2",
+      "layer": 0,
+      "name": "Dash 2",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -5.600000000000001,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-3",
+      "layer": 0,
+      "name": "Dash 3",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -2.8000000000000007,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-4",
+      "layer": 0,
+      "name": "Dash 4",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-5",
+      "layer": 0,
+      "name": "Dash 5",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 2.799999999999997,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-6",
+      "layer": 0,
+      "name": "Dash 6",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 5.599999999999998,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-7",
+      "layer": 0,
+      "name": "Dash 7",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 8.399999999999999,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-8",
+      "layer": 0,
+      "name": "Dash 8",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 11.2,
+              "y": -5,
+              "z": 0.95
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.12,
+              "z": 0.3
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#d6c48d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "dash-9",
+      "layer": 0,
+      "name": "Dash 9",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 5,
+              "y": 3.6,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 3.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-0-top",
+      "layer": 0,
+      "name": "Pipe 0 Top",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 5,
+              "y": 1.6,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-0-top-cap",
+      "layer": 0,
+      "name": "Pipe 0 Top Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 5,
+              "y": -2.2,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 5,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-0-bottom",
+      "layer": 0,
+      "name": "Pipe 0 Bottom",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 5,
+              "y": 0.4,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-0-bottom-cap",
+      "layer": 0,
+      "name": "Pipe 0 Bottom Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 11.2,
+              "y": 3.6,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 3.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-1-top",
+      "layer": 0,
+      "name": "Pipe 1 Top",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 11.2,
+              "y": 1.6,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-1-top-cap",
+      "layer": 0,
+      "name": "Pipe 1 Top Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 11.2,
+              "y": -2.2,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 5,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-1-bottom",
+      "layer": 0,
+      "name": "Pipe 1 Bottom",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 11.2,
+              "y": 0.4,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-1-bottom-cap",
+      "layer": 0,
+      "name": "Pipe 1 Bottom Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 17.4,
+              "y": 3.6,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 3.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-2-top",
+      "layer": 0,
+      "name": "Pipe 2 Top",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 17.4,
+              "y": 1.6,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-2-top-cap",
+      "layer": 0,
+      "name": "Pipe 2 Top Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 17.4,
+              "y": -2.2,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 5,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-2-bottom",
+      "layer": 0,
+      "name": "Pipe 2 Bottom",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 17.4,
+              "y": 0.4,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-2-bottom-cap",
+      "layer": 0,
+      "name": "Pipe 2 Bottom Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 23.6,
+              "y": 3.6,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 3.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-3-top",
+      "layer": 0,
+      "name": "Pipe 3 Top",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 23.6,
+              "y": 1.6,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-3-top-cap",
+      "layer": 0,
+      "name": "Pipe 3 Top Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 23.6,
+              "y": -2.2,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 5,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-3-bottom",
+      "layer": 0,
+      "name": "Pipe 3 Bottom",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 23.6,
+              "y": 0.4,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-3-bottom-cap",
+      "layer": 0,
+      "name": "Pipe 3 Bottom Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 29.8,
+              "y": 3.6,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 3.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-4-top",
+      "layer": 0,
+      "name": "Pipe 4 Top",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 29.8,
+              "y": 1.6,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-4-top-cap",
+      "layer": 0,
+      "name": "Pipe 4 Top Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 29.8,
+              "y": -2.2,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 5,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-4-bottom",
+      "layer": 0,
+      "name": "Pipe 4 Bottom",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 29.8,
+              "y": 0.4,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-4-bottom-cap",
+      "layer": 0,
+      "name": "Pipe 4 Bottom Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 36,
+              "y": 3.6,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 3.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-5-top",
+      "layer": 0,
+      "name": "Pipe 5 Top",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 36,
+              "y": 1.6,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-5-top-cap",
+      "layer": 0,
+      "name": "Pipe 5 Top Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 36,
+              "y": -2.2,
+              "z": 0.2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 5,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#5eb534",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.08,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.62
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-5-bottom",
+      "layer": 0,
+      "name": "Pipe 5 Bottom",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 36,
+              "y": 0.4,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.56,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#86d955",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "pipe-5-bottom-cap",
+      "layer": 0,
+      "name": "Pipe 5 Bottom Cap",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -4.5,
+              "y": 1.6,
+              "z": 1.4
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        }
+      ],
+      "id": "bird",
+      "layer": 0,
+      "name": "Bird",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Player",
+        "Flying"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.85,
+              "y": 0.78,
+              "z": 0.7
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#ffd93d",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "bird-body",
+      "layer": 0,
+      "name": "Bird Body",
+      "parentId": "bird",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -0.12,
+              "y": -0.02,
+              "z": 0.34
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.3,
+              "z": 0.14
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f7b731",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.6
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "bird-wing",
+      "layer": 0,
+      "name": "Bird Wing",
+      "parentId": "bird",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0.26,
+              "y": 0.18,
+              "z": 0.28
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.24,
+              "y": 0.24,
+              "z": 0.24
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#ffffff",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 0.4
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "bird-eye",
+      "layer": 0,
+      "name": "Bird Eye",
+      "parentId": "bird",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0.31,
+              "y": 0.19,
+              "z": 0.38
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.115,
+              "y": 0.115,
+              "z": 0.115
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#23252b",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "sphere",
+            "receiveShadow": false,
+            "roughness": 0.35
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "bird-pupil",
+      "layer": 0,
+      "name": "Bird Pupil",
+      "parentId": "bird",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0.46,
+              "y": -0.06,
+              "z": 0.3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": -90
+            },
+            "scale": {
+              "x": 0.22,
+              "y": 0.36,
+              "z": 0.22
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#ff9f1c",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "cone",
+            "receiveShadow": false,
+            "roughness": 0.55
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "bird-beak",
+      "layer": 0,
+      "name": "Bird Beak",
+      "parentId": "bird",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -0.44,
+              "y": 0.06,
+              "z": 0.16
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.26,
+              "y": 0.34,
+              "z": 0.12
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f0a500",
+            "isEnabled": true,
+            "isVisible": true,
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": false,
+            "roughness": 0.65
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "bird-tail",
+      "layer": 0,
+      "name": "Bird Tail",
+      "parentId": "bird",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "isEnabled": true,
+            "props": {},
+            "src": "scripts/ZzHarness.ts"
+          },
+          "type": "Script"
+        }
+      ],
+      "id": "test-harness",
+      "layer": 0,
+      "name": "Test Harness",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    }
+  ],
+  "format": "linden-scene",
+  "name": "Main",
+  "settings": {
+    "ambientColor": "#666666",
+    "skybox": null
+  },
+  "version": 2
+}

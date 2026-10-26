@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Linden agent cache / temp
+.linden/agent/tmp/
+
+# Build output
+build/
+dist/
+
+# Linden agent session data
+.linden/

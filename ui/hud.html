@@ -1,0 +1,326 @@
+<style>
+  #flappy-hud,
+  #flappy-hud * {
+    box-sizing: border-box;
+  }
+
+  #flappy-hud {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: "Trebuchet MS", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: #0d3550;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ------------------------------------------------------------- skor */
+  #flappy-hud #score {
+    position: absolute;
+    top: clamp(10px, 3vh, 34px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(46px, 9vh, 82px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    text-shadow:
+      0 3px 0 #123b57,
+      0 -3px 0 #123b57,
+      3px 0 0 #123b57,
+      -3px 0 0 #123b57,
+      0 8px 18px rgba(7, 44, 66, 0.35);
+    transition: color 0.12s ease;
+    will-change: transform;
+  }
+
+  #flappy-hud .best-chip {
+    position: absolute;
+    top: clamp(12px, 2.6vh, 28px);
+    right: clamp(14px, 3vw, 34px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    font-size: clamp(10px, 1.5vh, 13px);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #12405c;
+    backdrop-filter: blur(6px);
+  }
+
+  #flappy-hud .best-chip b {
+    font-size: 1.25em;
+    letter-spacing: 0.02em;
+    color: #0d3550;
+  }
+
+  /* ------------------------------------------------------------- panel */
+  #flappy-hud .panel {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  #flappy-hud #ready-panel {
+    padding: 20px clamp(22px, 4vw, 40px) 18px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+      0 22px 45px rgba(10, 54, 76, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    animation: ff-pop 0.5s cubic-bezier(0.18, 1.4, 0.4, 1) both;
+  }
+
+  #flappy-hud .ready-title {
+    font-size: clamp(20px, 3.4vh, 29px);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #10405f;
+  }
+
+  #flappy-hud .keys {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0 8px;
+  }
+
+  #flappy-hud .key {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 10px;
+    background: #10405f;
+    color: #eafaff;
+    font-size: clamp(10px, 1.5vh, 13px);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    box-shadow: 0 4px 0 #062436;
+  }
+
+  #flappy-hud .or {
+    font-size: clamp(9px, 1.3vh, 11px);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  #flappy-hud .ready-hint {
+    font-size: clamp(10px, 1.6vh, 13px);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #2c6280;
+  }
+
+  /* --------------------------------------------------------- game over */
+  #flappy-hud #gameover-panel {
+    width: min(86vw, 360px);
+    padding: 22px 24px 20px;
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(14, 52, 74, 0.94), rgba(8, 33, 49, 0.96));
+    border: 1px solid rgba(159, 229, 247, 0.4);
+    box-shadow:
+      0 30px 60px rgba(3, 22, 34, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    color: #eafaff;
+    backdrop-filter: blur(8px);
+    animation: ff-drop 0.42s cubic-bezier(0.18, 1.2, 0.35, 1) both;
+  }
+
+  #flappy-hud .over-title {
+    font-size: clamp(24px, 4vh, 34px);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #ffd93d;
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 0.28);
+  }
+
+  #flappy-hud .over-sub {
+    margin-top: 2px;
+    font-size: clamp(9px, 1.4vh, 11px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8fc3d8;
+  }
+
+  #flappy-hud .medal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 74px;
+    margin: 14px auto 4px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ffe680, #f4b73a);
+    color: #4a3200;
+    font-size: clamp(9px, 1.4vh, 11px);
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    box-shadow: 0 6px 14px rgba(244, 183, 58, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  #flappy-hud .rows {
+    display: flex;
+    gap: 8px;
+    margin: 14px 0 18px;
+  }
+
+  #flappy-hud .row {
+    flex: 1;
+    padding: 9px 6px 7px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  #flappy-hud .row span {
+    display: block;
+    font-size: clamp(8px, 1.2vh, 10px);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #8fc3d8;
+    text-transform: uppercase;
+  }
+
+  #flappy-hud .row b {
+    display: block;
+    margin-top: 2px;
+    font-size: clamp(22px, 3.4vh, 30px);
+    font-weight: 800;
+    line-height: 1;
+    color: #ffffff;
+  }
+
+  #flappy-hud #btn-restart {
+    display: block;
+    width: 100%;
+    padding: 13px 16px;
+    border: 0;
+    border-radius: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    font-family: inherit;
+    font-size: clamp(12px, 1.8vh, 15px);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #123b26;
+    background: linear-gradient(180deg, #a9ef6a, #74c93f);
+    box-shadow: 0 6px 0 #4c9427, 0 14px 26px rgba(0, 0, 0, 0.32);
+    transition: transform 0.09s ease, filter 0.12s ease, box-shadow 0.09s ease;
+  }
+
+  #flappy-hud #btn-restart:hover {
+    filter: brightness(1.06);
+  }
+
+  #flappy-hud #btn-restart:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #4c9427, 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  #flappy-hud .over-hint {
+    margin-top: 10px;
+    font-size: clamp(9px, 1.3vh, 11px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7fb0c5;
+  }
+
+  /* ------------------------------------------------------------- hit fx */
+  #flappy-hud #hit-flash {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 52%, rgba(255, 64, 64, 0) 34%, rgba(255, 42, 42, 0.55) 100%);
+  }
+
+  /* -------------------------------------------------------------- chip */
+  #flappy-hud .chips {    position: absolute;
+    left: clamp(12px, 2.4vw, 26px);
+    bottom: clamp(10px, 2.2vh, 22px);
+    display: flex;
+    gap: 6px;
+  }
+
+  #flappy-hud .chip {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(9, 46, 66, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: clamp(8px, 1.2vh, 10px);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: rgba(240, 253, 255, 0.9);
+    text-transform: uppercase;
+  }
+
+  @keyframes ff-pop {
+    from { opacity: 0; transform: translate(-50%, -46%) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  }
+
+  @keyframes ff-drop {
+    from { opacity: 0; transform: translate(-50%, -58%) scale(0.94); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  }
+
+  @media (max-height: 430px) {
+    #flappy-hud .best-chip { top: 10px; }
+    #flappy-hud #ready-panel { padding: 14px 20px 12px; }
+    #flappy-hud .over-sub,
+    #flappy-hud .over-hint { display: none; }
+  }
+</style>
+
+<div id="flappy-hud">
+  <div id="hit-flash"></div>
+  <div id="score">0</div>
+
+  <div class="best-chip">TERBAIK <b id="best">0</b></div>
+
+  <div id="ready-panel" class="panel">
+    <div class="ready-title">SIAP TERBANG?</div>
+    <div class="keys">
+      <span class="key">SPASI</span>
+      <span class="or">atau</span>
+      <span class="key">KETUK</span>
+    </div>
+    <div class="ready-hint">Kepakkan sayap, jangan sentuh pipa!</div>
+  </div>
+
+  <div id="gameover-panel" class="panel" style="display: none;">
+    <div class="over-title">GAME OVER</div>
+    <div class="over-sub">Penerbangan berakhir</div>
+    <div class="medal" id="medal-label">PEMULA</div>
+    <div class="rows">
+      <div class="row">
+        <span>Skor</span>
+        <b id="final-score">0</b>
+      </div>
+      <div class="row">
+        <span>Terbaik</span>
+        <b id="final-best">0</b>
+      </div>
+    </div>
+    <button id="btn-restart" data-interactive>MAIN LAGI</button>
+    <div class="over-hint">atau tekan SPASI</div>
+  </div>
+
+  <div class="chips">
+    <span class="chip" id="state-tag">SIAP</span>
+    <span class="chip" id="speed-tag">4.0x</span>
+  </div>
+</div>
