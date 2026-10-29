@@ -1,4 +1,4 @@
-# OXEN SPACESHIP GALAXY
+# FlappyFlight
 
 ## Game ini dibuat dengan LINDEN ENGINE
 
@@ -103,3 +103,7 @@ Export build HTML5 lewat **Export → Web** (atau tool `export_web`). Hasilnya a
   <b>OXEN SPACESHIP GALAXY</b><br>
   Made BY Linden Engine — © 2026 AlStartlight
 </p>
+
+## Kredit
+
+Dibuat dengan **Linden Engine AI Agent** — [Linden Engine](https://lindenengine.com).
